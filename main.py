@@ -1,7 +1,13 @@
-from typing import Union, Optional, List
-from fastapi import FastAPI, Path, Query
-from pydantic import BaseModel
+from fastapi import FastAPI
+
 from api import users, products, categories
+from db.database import engine
+from db.models import user, category, product
+
+user.Base.metadata.create_all(bind=engine)
+category.Base.metadata.create_all(bind=engine)
+product.Base.metadata.create_all(bind=engine)
+
 
 app = FastAPI(
     title="E-Commerce",
@@ -16,3 +22,7 @@ app = FastAPI(
 app.include_router(users.router)
 app.include_router(products.router)
 app.include_router(categories.router)
+
+@app.get("/")
+def root():
+    return {"message": "Welcome to Shop for Me API!"}

@@ -1,25 +1,16 @@
 from typing import Union, Optional, List
-from fastapi import FastAPI, Path, Query, APIRouter
-from pydantic import BaseModel
+
+from fastapi import APIRouter,Depends, HTTPException
+from sqlalchemy.orm import Session
+
+from db.database import async_get_db, get_db, Base
+from pydantic_schema.product import ProductBase, Product
 
 router = APIRouter()
 
-users = []
-
-class User(BaseModel):
-    email: str
-    is_active: bool
-    bio: Optional[str]
-
-@router.get("/products/{id}")
-async def get_users():
-    return users
-
-@router.post("/products")
-async def create_user(user: User):
-    users.append(user)
-    return "Success"
-
-# @router.get("/users/{user_id}")
-# async def get_user(user_id: int ):
-#     return { "user": users[user_id]}
+@router.post("/products/{category_id}", response_model=List[ProductBase])
+async def get_products_by_category(category_id: int, db: Session = Depends(get_db)):
+    products = db.query(Product).filter(Product.category_id == category_id).all()
+    if not products:
+        raise HTTPException(status_code=404, detail="No products found in this category")
+    return products

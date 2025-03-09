@@ -1,25 +1,34 @@
 from typing import Union, Optional, List
-from fastapi import FastAPI, Path, Query, APIRouter
-from pydantic import BaseModel
+
+from fastapi import APIRouter,Depends, HTTPException, status
+from sqlalchemy.orm import Session
+
+from api.utils.users import get_user, get_user_by_email, get_users, create_user
+from pydantic_schema.user import UserCreate, User, UserLogin
+from pydantic_schema.token import Token
+from db.database import async_get_db, get_db
+import api.utils.auth as auth
 
 router = APIRouter()
 
-users = []
-
-class User(BaseModel):
-    email: str
-    is_active: bool
-    bio: Optional[str]
-
 @router.get("/users", response_model=List[User])
-async def get_users():
+async def read_users(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
+    users = get_users(db, skip=skip, limit=limit)
     return users
 
-@router.post("/users")
-async def create_user(user: User):
-    users.append(user)
-    return "Success"
+@router.post("/users/register")
+async def create_new_user(user: UserCreate, db: Session = Depends(get_db)):
+    db_user = get_user_by_email(db=db, email=user.email)
+    if db_user:
+        raise HTTPException(
+            status_code=400, detail="Email is already registered"
+        )
+    return create_user(db=db, user=user)
 
-@router.get("/users/{user_id}")
-async def get_user(user_id: int ):
-    return { "user": users[user_id]}
+@router.post("/login", response_model=Token)
+def login(user_data: UserLogin, db: Session = Depends(get_db)):
+    user = db.query(User).filter(User.email == user_data.email).first()
+    if not user or not auth.verify_password(user_data.password, user.hashed_password):
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid credentials")
+    access_token = auth.create_access_token({"sub": user.email})
+    return {"access_token": access_token, "token_type": "bearer"}

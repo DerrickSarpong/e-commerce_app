@@ -1,0 +1,72 @@
+[
+    {
+        "username": "john_doe",
+        "email": "john.doe@example.com",
+        "hashed_password": "$2b$12$JH6Xt6Q5V9R.KRUyHqPFeOLhygPUGvLBoVDbFVV8yy7WUBvEdjYGe",
+        "created_at": "2024-03-08T12:00:00Z",
+        "updated_at": "2024-03-08T12:00:00Z"
+    },
+    {
+        "username": "alice_smith",
+        "email": "alice.smith@example.com",
+        "hashed_password": "$2b$12$f8lFVuV0KZy62TXxi5Cgu.Tw/ZQoHVKcn8OrPOFwVscdx7m7Q6B1S",
+        "created_at": "2024-03-08T12:05:00Z",
+        "updated_at": "2024-03-08T12:05:00Z"
+    },
+    {
+        "username": "mark_jones",
+        "email": "mark.jones@example.com",
+        "hashed_password": "$2b$12$Tjxz5m7tHZ6a2ScD7S2/0.B5y/aPXINh4jpyHj1nQaLeRT9YyC3we",
+        "created_at": "2024-03-08T12:10:00Z",
+        "updated_at": "2024-03-08T12:10:00Z"
+    },
+    {
+        "username": "susan_clark",
+        "email": "susan.clark@example.com",
+        "hashed_password": "$2b$12$X39KIfjys1P3I8FfZV1TWe5lt6wHhtWj9mFEelTR6z3Lx6Wt4KCi2",
+        "created_at": "2024-03-08T12:15:00Z",
+        "updated_at": "2024-03-08T12:15:00Z"
+    },
+    {
+        "username": "chris_evans",
+        "email": "chris.evans@example.com",
+        "hashed_password": "$2b$12$YJ8qKlRMHsqe.Q.H32ZWj.91n3kgxHpShA0Cc.HLcfD4O5tJUlNAC",
+        "created_at": "2024-03-08T12:20:00Z",
+        "updated_at": "2024-03-08T12:20:00Z"
+    },
+    {
+        "username": "emma_wilson",
+        "email": "emma.wilson@example.com",
+        "hashed_password": "$2b$12$1p3m9FJ/MH6YIF7u5.rzcuQVi7slP/qzA4DmlfzMEe9KhL/wR0gVa",
+        "created_at": "2024-03-08T12:25:00Z",
+        "updated_at": "2024-03-08T12:25:00Z"
+    },
+    {
+        "username": "michael_brown",
+        "email": "michael.brown@example.com",
+        "hashed_password": "$2b$12$9O2oIdgA5/k2dx6NQivKmOG2y/R3UoQLZAw3UyVXgybvIWd89Na9a",
+        "created_at": "2024-03-08T12:30:00Z",
+        "updated_at": "2024-03-08T12:30:00Z"
+    },
+    {
+        "username": "olivia_adams",
+        "email": "olivia.adams@example.com",
+        "hashed_password": "$2b$12$Jyl7qLKnRT4HFpRrDbF/q.IJ9l7TV5n8yC65uxylT5zwQIrZbn2Im",
+        "created_at": "2024-03-08T12:35:00Z",
+        "updated_at": "2024-03-08T12:35:00Z"
+    },
+    {
+        "username": "william_taylor",
+        "email": "william.taylor@example.com",
+        "hashed_password": "$2b$12$w6BzO3cmUE9uT2ErAG4aFeV4qJ.yDEogibGgTCRKJ/ZbFbm3PEb4q",
+        "created_at": "2024-03-08T12:40:00Z",
+        "updated_at": "2024-03-08T12:40:00Z"
+    },
+    {
+        "username": "sophia_miller",
+        "email": "sophia.miller@example.com",
+        "hashed_password": "$2b$12$ADxjz.GHhLRuK/9/uAmB7.oe8JD3I3V4Fbw0P5FS2mWYbn9wqx4J6",
+        "created_at": "2024-03-08T12:45:00Z",
+        "updated_at": "2024-03-08T12:45:00Z"
+    }
+]
