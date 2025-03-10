@@ -13,11 +13,6 @@ import api.utils.auth as auth
 
 router = APIRouter()
 
-# @router.get("/users", response_model=List[User])
-# async def read_users(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
-#     users = get_users(db, skip=skip, limit=limit)
-#     return users
-
 @router.post("/auth/register")
 async def create_new_user(user: UserCreate, db: Session = Depends(get_db)):
     db_user = get_user_by_email(db=db, email=user.email)
