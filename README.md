@@ -46,7 +46,7 @@ alembic upgrade head
 ### **5️⃣ Populate the Database**
 Run the script to add default categories and products:
 ```sh
-python populate_db.py
+python db/populate_db.py
 ```
 
 ### **6️⃣ Start the FastAPI Server**
@@ -88,7 +88,7 @@ FastAPI provides automatic API documentation:
 ## 🧪 Running Tests
 To run unit tests:
 ```sh
-pytest
+pytest tests/test_main.py
 ```
 ---
 **Enjoy Coding! 🚀**
