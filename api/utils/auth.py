@@ -44,3 +44,4 @@ def verify_access_token(token: str):
         return payload  # Returns decoded user data (e.g., email)
     except JWTError:
         return None
+

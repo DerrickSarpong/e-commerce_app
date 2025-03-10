@@ -9,7 +9,7 @@ from db.models.product import Product as ModelProduct
 
 router = APIRouter()
 
-@router.post("/products/{category_id}", response_model=List[ProductBase])
+@router.get("/products/{category_id}", response_model=List[ProductBase])
 async def get_products_by_category(category_id: int, db: Session = Depends(get_db)):
     products = db.query(ModelProduct).filter(ModelProduct.category_id == category_id).all()
     if not products:

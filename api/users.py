@@ -2,9 +2,7 @@ from datetime import timedelta
 from typing import Union, Optional, List
 
 from fastapi import APIRouter,Depends, HTTPException, status
-from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.orm import Session
-from sqlalchemy.sql.annotation import Annotated
 
 from api.utils.users import get_user, get_user_by_email, get_users, create_user
 from pydantic_schema.user import UserCreate, User, UserLogin
@@ -15,12 +13,12 @@ import api.utils.auth as auth
 
 router = APIRouter()
 
-@router.get("/users", response_model=List[User])
-async def read_users(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
-    users = get_users(db, skip=skip, limit=limit)
-    return users
+# @router.get("/users", response_model=List[User])
+# async def read_users(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
+#     users = get_users(db, skip=skip, limit=limit)
+#     return users
 
-@router.post("/users/register")
+@router.post("/auth/register")
 async def create_new_user(user: UserCreate, db: Session = Depends(get_db)):
     db_user = get_user_by_email(db=db, email=user.email)
     if db_user:
@@ -29,7 +27,7 @@ async def create_new_user(user: UserCreate, db: Session = Depends(get_db)):
         )
     return create_user(db=db, user=user)
 
-@router.post("/login", response_model=Token)
+@router.post("/auth/login", response_model=Token)
 def login(user_data: UserLogin, db: Session = Depends(get_db)):
     user = db.query(Model_User).filter(Model_User.email == user_data.email).first()
     if not user or not auth.verify_password(user_data.password, user.hashed_password):
