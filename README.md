@@ -90,13 +90,6 @@ To run unit tests:
 ```sh
 pytest
 ```
-
-## ✨ Contributing
-Feel free to submit a pull request or open an issue for improvements.
-
-## 📜 License
-This project is licensed under the MIT License.
-
 ---
 **Enjoy Coding! 🚀**
 

@@ -1,12 +1,10 @@
 import json
 from sqlalchemy.orm import Session
 from database import SessionLocal
-from fastapi import Depends
 
 import models.category as Model
 from models.product import Product
 from sqlalchemy.exc import IntegrityError
-from db.database import get_db
 
 
 with open("products.json", "r") as file:
@@ -24,7 +22,7 @@ for category_name in category_names:
         db.add(category)
         db.commit()
         db.refresh(category)
-    category_map[category_name] = category.id  # Store category ID
+    category_map[category_name] = category.id
 
 for product in products_data:
     category_id = category_map.get(product["category"])
@@ -38,7 +36,7 @@ for product in products_data:
         db.commit()
         db.refresh(new_product)
     except IntegrityError:
-        db.rollback()  # Prevent duplicate entries
+        db.rollback()
 
 db.close()
 

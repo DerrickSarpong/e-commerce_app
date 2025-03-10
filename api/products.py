@@ -3,8 +3,8 @@ from typing import List
 from fastapi import APIRouter,Depends, HTTPException
 from sqlalchemy.orm import Session
 
-from db.database import async_get_db, get_db, Base
-from pydantic_schema.product import ProductBase, Product
+from db.database import async_get_db, get_db
+from pydantic_schema.product import ProductBase
 from db.models.product import Product as ModelProduct
 
 router = APIRouter()

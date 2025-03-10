@@ -1,4 +1,3 @@
-from typing import List
 from random import choice
 
 from fastapi import APIRouter,Depends, HTTPException
@@ -7,9 +6,7 @@ from sqlalchemy.orm import Session
 from db.database import async_get_db, get_db
 import pydantic_schema.shopping as shopping
 from db.models.product import Product as ModelProduct
-from db.models.user import User as ModelUser
-import api.utils.auth as auth
-from api.utils.auth import oauth2_bearer
+
 
 router = APIRouter()
 

@@ -1,5 +1,4 @@
-from sqlalchemy import Column, Integer, String, ForeignKey, Float, Boolean, Table, Enum, Text
-from sqlalchemy.orm import relationship
+from sqlalchemy import Column, Integer, String
 
 from ..database import Base
 from .mixins import Timestamp

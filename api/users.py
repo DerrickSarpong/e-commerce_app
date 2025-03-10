@@ -1,6 +1,3 @@
-from datetime import timedelta
-from typing import Union, Optional, List
-
 from fastapi import APIRouter,Depends, HTTPException, status
 from sqlalchemy.orm import Session
 
@@ -13,7 +10,7 @@ import api.utils.auth as auth
 
 router = APIRouter()
 
-@router.post("/auth/register")
+@router.post("/auth/register", status_code=201)
 async def create_new_user(user: UserCreate, db: Session = Depends(get_db)):
     db_user = get_user_by_email(db=db, email=user.email)
     if db_user:
