@@ -1,0 +1,55 @@
+[
+    {"name": "Laptop", "price": 1200.99, "category": "Electronics"},
+    {"name": "Smartphone", "price": 699.99, "category": "Electronics"},
+    {"name": "Wireless Headphones", "price": 149.99, "category": "Electronics"},
+    {"name": "Mechanical Keyboard", "price": 89.99, "category": "Electronics"},
+    {"name": "Gaming Mouse", "price": 59.99, "category": "Electronics"},
+
+    {"name": "T-shirt", "price": 19.99, "category": "Clothing"},
+    {"name": "Jeans", "price": 49.99, "category": "Clothing"},
+    {"name": "Sneakers", "price": 79.99, "category": "Clothing"},
+    {"name": "Jacket", "price": 99.99, "category": "Clothing"},
+    {"name": "Baseball Cap", "price": 14.99, "category": "Clothing"},
+
+    {"name": "Blender", "price": 39.99, "category": "Home Appliances"},
+    {"name": "Microwave Oven", "price": 129.99, "category": "Home Appliances"},
+    {"name": "Electric Kettle", "price": 29.99, "category": "Home Appliances"},
+    {"name": "Vacuum Cleaner", "price": 149.99, "category": "Home Appliances"},
+    {"name": "Toaster", "price": 24.99, "category": "Home Appliances"},
+
+    {"name": "Basketball", "price": 29.99, "category": "Sports"},
+    {"name": "Soccer Ball", "price": 24.99, "category": "Sports"},
+    {"name": "Tennis Racket", "price": 89.99, "category": "Sports"},
+    {"name": "Yoga Mat", "price": 19.99, "category": "Sports"},
+    {"name": "Dumbbells Set", "price": 59.99, "category": "Sports"},
+
+    {"name": "Fiction Book", "price": 12.99, "category": "Books"},
+    {"name": "Science Book", "price": 18.99, "category": "Books"},
+    {"name": "History Book", "price": 14.99, "category": "Books"},
+    {"name": "Self-help Book", "price": 21.99, "category": "Books"},
+    {"name": "Biography", "price": 17.99, "category": "Books"},
+
+    {"name": "Watch", "price": 249.99, "category": "Accessories"},
+    {"name": "Wallet", "price": 39.99, "category": "Accessories"},
+    {"name": "Sunglasses", "price": 79.99, "category": "Accessories"},
+    {"name": "Necklace", "price": 129.99, "category": "Accessories"},
+    {"name": "Backpack", "price": 59.99, "category": "Accessories"},
+
+    {"name": "Desk Chair", "price": 159.99, "category": "Furniture"},
+    {"name": "Bookshelf", "price": 89.99, "category": "Furniture"},
+    {"name": "Bed Frame", "price": 299.99, "category": "Furniture"},
+    {"name": "Dining Table", "price": 499.99, "category": "Furniture"},
+    {"name": "Sofa", "price": 799.99, "category": "Furniture"},
+
+    {"name": "Perfume", "price": 69.99, "category": "Beauty"},
+    {"name": "Lipstick", "price": 19.99, "category": "Beauty"},
+    {"name": "Foundation", "price": 39.99, "category": "Beauty"},
+    {"name": "Shampoo", "price": 14.99, "category": "Beauty"},
+    {"name": "Skincare Set", "price": 79.99, "category": "Beauty"},
+
+    {"name": "Dog Food", "price": 34.99, "category": "Pet Supplies"},
+    {"name": "Cat Litter", "price": 24.99, "category": "Pet Supplies"},
+    {"name": "Bird Cage", "price": 59.99, "category": "Pet Supplies"},
+    {"name": "Fish Tank", "price": 99.99, "category": "Pet Supplies"},
+    {"name": "Pet Shampoo", "price": 14.99, "category": "Pet Supplies"}
+]
